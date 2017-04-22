@@ -3,7 +3,10 @@
 }
 
 body {
-	background-color: #DDD;
+    background-image: url(philly2.jpg);
+    background-repeat: no-repeat;
+    background-size: 115vw 89vh;
+    background-position: -140px 106px;
 	color: #FFF;
 	font-family: 'Raleway', sans-serif;
 	margin: 0;
@@ -21,12 +24,14 @@ body {
     font-size: 3.6em;
     height: 20vh;
     justify-content: center;
+    opacity: 0.9;
     position: relative;
     width: 100vw;
 }
 
 .nameBar {
 	background-color: #FF9EBB;
+	font-size: 4.8em;
 	z-index: 4;
 }
 
