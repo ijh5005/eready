@@ -30,26 +30,27 @@ body {
 }
 
 .nameBar {
-	background-color: #FF9EBB;
+	background-color: #FF5A8B;
+	font-family: 'Anton', sans-serif;
 	font-size: 4.8em;
 	z-index: 4;
 }
 
 #upcoming {
-	background-color: #FF5A8B;
+	background-color: #FE0B1D;
 	z-index: 3;
 }
 
 #previous {
-	background-color: #FE0B1D;
+	background-color: #DD0072;
 	z-index: 2;
 }
 
 #membership {
-	background-color: #DD0072;
+	background-color: #C400BE;
 	z-index: 1;
 }
 
 #contact {
-	background-color: #C400BE;
+	background-color: #000;
 }
