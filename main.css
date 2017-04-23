@@ -16,10 +16,26 @@ body {
 #dynamicPageTwo {
 	display: none;
 	height: 100vh;
-	opacity: 0.9;
+	opacity: 0.96;
 	position: absolute;
 	top: 0;
 	width: 100%;
+}
+
+#contentLiner {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+}
+
+#content {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3.4em;
+    width: 80%;
 }
 
 #container {

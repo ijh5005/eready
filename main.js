@@ -20,13 +20,13 @@ app.controller("ctrl", [ "$scope", "nextPage", "prevPage",
 	};
 }]);
 
-app.service("nextPage", function (){
+app.service("nextPage", function (database){
 	this.slide = ($event) => {
 		//cache the id of the page -> used to navigate to appropriate page
 		const id = $event.target.id;
 		const color = $("#" + id).css("backgroundColor");
 
-		const slidePage = () => {
+		const slidePage = (text) => {
 			$("#container").animate({
 				right: "110vw"
 			}, {
@@ -34,18 +34,25 @@ app.service("nextPage", function (){
 			});
 
 			$("#dynamicPageOne").css("backgroundColor", color).fadeIn();
-		}
+			$("#dynamicPageOne #content").html(text);
+			$("#dynamicPageOne #content").fadeIn(1000);
+		};
 
 		if(id == "titleBar"){
-			slidePage();
+			let text = database.homepageText;
+			slidePage(text);
 		} else if(id == "upcoming"){
-			//slidePage();
+			let text = "";
+			slidePage(text);
 		} else if(id == "previous"){
-			//slidePage();
+			let text = "";
+			slidePage(text);
 		} else if(id == "membership"){
-			//slidePage();
+			let text = "";
+			slidePage(text);
 		} else if(id == "contact"){
-			//slidePage();
+			let text = "";
+			slidePage(text);
 		}
 	}
 });
@@ -82,6 +89,10 @@ app.service("prevPage", function ($timeout){
 		// 	slidePage();
 		// }
 	}
+});
+
+app.service("database", function () {
+	this.homepageText = "<span>Entertainment Ready offers fun, friendly and safe events to Philadelphia singles.</span><br><span>What makes us different is that we are not your typical dating service. We focus on dating education rather than playing match maker.</span><br><span>We also cater to singles in different stages of dating readiness, so if you are newly single and just want to be around other singles or have been single for awhile and you are looking for that special one, there is an event for you.</span>"
 });
 
 app.directive("homepage", function () {

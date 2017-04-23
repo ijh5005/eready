@@ -11,7 +11,11 @@
 	<script type="text/javascript" src="main.js"></script>
 <body ng-app="app" ng-controller="ctrl" ng-cloak>
 	<div homepage></div>
-	<div id="dynamicPageOne" ng-click="prevPage($event)"></div>
+	<div id="dynamicPageOne" ng-click="prevPage($event)">
+		<div id="contentLiner">
+			<div id="content"></div>
+		</div>
+	</div>
 	<!-- <div id="dynamicPageTwo"></div> -->
 </body>
 </html>
