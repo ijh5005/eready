@@ -30,14 +30,14 @@ body {
 }
 
 .nameBar {
-	background-color: #D762AE;
+	background-color: #EF58BA;
 	font-family: 'Anton', sans-serif;
 	font-size: 4.8em;
 	z-index: 4;
 }
 
 #upcoming {
-	background-color: #C83193;
+	background-color: #D8008C;
 	z-index: 3;
 }
 
