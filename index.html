@@ -10,13 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script type="text/javascript" src="main.js"></script>
 <body ng-app="app" ng-controller="ctrl" ng-cloak>
-	<div id="container">
-		<div class="nameBar">
-			{{name}}
-		</div>
-		<div ng-repeat="x in homePageOptions" id="{{x.id}}" class="mainMenuOption">
-			<div> {{x.name}} </div>
-		</div>
-	</div>
+	<div homepage></div>
+	<div id="dynamicPageOne" ng-click="prevPage($event)"></div>
+	<!-- <div id="dynamicPageTwo"></div> -->
 </body>
 </html>
