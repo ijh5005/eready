@@ -11,11 +11,31 @@
 	<script type="text/javascript" src="main.js"></script>
 <body ng-app="app" ng-controller="ctrl" ng-cloak>
 	<div homepage></div>
-	<div id="dynamicPageOne" ng-click="prevPage($event)">
+	<div class="dynamicPageOne" ng-click="prevPage($event)">
 		<div id="contentLiner">
 			<div id="content"></div>
 		</div>
 	</div>
-	<!-- <div id="dynamicPageTwo"></div> -->
+
+	<!-- used for testing pages -->
+	<div id="dynamicPageTwo" ng-click="prevPage($event)">
+		<div id="contentLiner">
+			<div id="content">
+				<div id="innerLiner">
+					<h2>MEMBER'S CLUB</h2>
+					<div class="links">Members only events</div>
+					<div class="links">Membership options</div>
+					<div class="links">Red flag app for dating events</div>
+					<div class="imgLinkHolder">
+						<div class="imgLinks"> <img class="img" src="img1.jpg"> </div>
+						<div class="imgLinks"> <img class="img" src="img2.jpg"> </div>
+						<div class="imgLinks"> <img class="img" src="img3.jpg"> </div>
+						<div class="imgLinks"> <img class="img" src="img1.jpg"> </div>
+						<div class="imgLinks"> <img class="img" src="img2.jpg"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

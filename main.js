@@ -2,8 +2,7 @@
 
 var app = angular.module("app", []);
 
-app.controller("ctrl", [ "$scope", "nextPage", "prevPage", 
-						function ($scope, nextPage, prevPage) {
+app.controller("ctrl", [ "$scope", "nextPage", "prevPage", function ($scope, nextPage, prevPage) {
 	$scope.name = "Entertainment Ready";
 	$scope.homePageOptions = [ 
 		{name: "Upcoming Events", id: "upcoming"}, 
@@ -15,7 +14,6 @@ app.controller("ctrl", [ "$scope", "nextPage", "prevPage",
 		nextPage.slide($event);
 	};
 	$scope.prevPage = ($event) => {
-		console.log("prev");
 		prevPage.slide($event);
 	};
 }]);
@@ -24,22 +22,34 @@ app.service("nextPage", function (database){
 	this.slide = ($event) => {
 		//cache the id of the page -> used to navigate to appropriate page
 		const id = $event.target.id;
+		//cache the color button
 		const color = $("#" + id).css("backgroundColor");
 
 		const slidePage = (text) => {
-			$("#container").animate({
-				right: "110vw"
-			}, {
-				duration: 500
-			});
+			//slide the next page in
+			$("#container").animate({ right: "110vw" }, 500 );
 
-			$("#dynamicPageOne").css("backgroundColor", color).fadeIn();
-			$("#dynamicPageOne #content").html(text);
-			$("#dynamicPageOne #content").fadeIn(1000);
+			//change the color of the next page
+			$(".dynamicPageOne").css("backgroundColor", color).fadeIn();
+			//set the text of the next page
+			$(".dynamicPageOne #content").html(text);
+			//fadeIn the text for the next page
+			$(".dynamicPageOne #content").fadeIn(1000);
 		};
 
+		const slideSample = () => {
+			//slide the next page in
+			$("#container").animate({ right: "110vw" }, 500 );
+
+			//change the color of the next page
+			$("#dynamicPageTwo").css("backgroundColor", color).fadeIn();
+			//fadeIn the text for the next page
+			$("#dynamicPageTwo #content").fadeIn(1000);
+		};
+
+		//the navigation tree
 		if(id == "titleBar"){
-			let text = database.homepageText;
+			let text = database.aboutPageHtml;
 			slidePage(text);
 		} else if(id == "upcoming"){
 			let text = "";
@@ -49,7 +59,7 @@ app.service("nextPage", function (database){
 			slidePage(text);
 		} else if(id == "membership"){
 			let text = "";
-			slidePage(text);
+			slideSample();
 		} else if(id == "contact"){
 			let text = "";
 			slidePage(text);
@@ -71,7 +81,10 @@ app.service("prevPage", function ($timeout){
 				duration: 500
 			});
 
-			$("#dynamicPageOne").fadeOut(800);
+			$(".dynamicPageOne").fadeOut(800);
+
+			//for testing.
+			$("#dynamicPageTwo").fadeOut(800);
 			
 		}
 
@@ -92,7 +105,8 @@ app.service("prevPage", function ($timeout){
 });
 
 app.service("database", function () {
-	this.homepageText = "<span>Entertainment Ready offers fun, friendly and safe events to Philadelphia singles.</span><br><span>What makes us different is that we are not your typical dating service. We focus on dating education rather than playing match maker.</span><br><span>We also cater to singles in different stages of dating readiness, so if you are newly single and just want to be around other singles or have been single for awhile and you are looking for that special one, there is an event for you.</span>"
+	this.aboutPageHtml = "<span>Entertainment Ready offers fun, friendly and safe events to Philadelphia singles.</span><br><span>What makes us different is that we are not your typical dating service. We focus on dating education rather than playing match maker.</span><br><span>We also cater to singles in different stages of dating readiness, so if you are newly single and just want to be around other singles or have been single for awhile and you are looking for that special one, there is an event for you.</span>"
+	this.membershipPage = "";
 });
 
 app.directive("homepage", function () {

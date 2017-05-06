@@ -12,7 +12,7 @@ body {
 	margin: 0;
 }
 
-#dynamicPageOne,
+.dynamicPageOne,
 #dynamicPageTwo {
 	display: none;
 	height: 100vh;
@@ -29,12 +29,24 @@ body {
 	justify-content: center;
 }
 
+#innerLiner {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 0px;
+}
+
 #content {
 	display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     font-size: 3.4em;
+    height: 80vh;
+    justify-content: center;
+    overflow: scroll;
+    position: relative;
     width: 80%;
 }
 
@@ -80,10 +92,39 @@ body {
 
 #contact {
 	background-color: #008FFF;
+	z-index: 1;
 }
 
 h1 {
 	font-size: 4em;
 	color: black;
 	z-index: 1;
+}
+
+.links {
+	margin-top: 1em;
+}
+
+.imgLinkHolder {
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.imgLinks {
+	align-items: flex-end;
+	border: 0.2em solid white;
+	border-radius: 16px;
+	display: flex;
+    height: 6em;
+    margin-top: 0.5em;
+    width: 6em;
+}
+
+.img {
+    height: 6em;
+    margin-top: 0.5em;
+    width: 6em;
 }
