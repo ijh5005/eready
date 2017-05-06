@@ -43,7 +43,7 @@ body {
     align-items: center;
     flex-direction: column;
     font-size: 3.4em;
-    height: 80vh;
+    height: 84vh;
     justify-content: center;
     overflow: scroll;
     position: relative;
@@ -113,9 +113,17 @@ h1 {
     margin-top: 2em;
 }
 
+.linkImgHolder {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 8.6em;
+	justify-content: flex-end;
+	margin-top: 1em;
+}
+
 .imgLinks {
 	align-items: flex-end;
-	border: 0.2em solid white;
 	border-radius: 16px;
 	display: flex;
     height: 6em;
@@ -124,7 +132,15 @@ h1 {
 }
 
 .img {
+	border-radius: 30px;
     height: 6em;
     margin-top: 0.5em;
     width: 6em;
+}
+
+.imgHeader {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 6em;
 }
