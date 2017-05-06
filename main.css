@@ -124,6 +124,7 @@ h1 {
 	flex-direction: column;
 	height: 8.6em;
 	justify-content: flex-start;
+	position: relative;
 	margin-top: 1em;
 }
 
@@ -150,4 +151,29 @@ h1 {
 	text-align: center;
 	margin-top: 0.32em;
 	width: 6em;
+}
+
+.checkmarkliner {
+    align-items: flex-end;
+    display: flex;
+    height: 5.5em;
+    position: absolute;
+    top: 0px;
+    width: 5em;
+    opacity: 0.8;
+}
+
+.checkmarkliner div {
+    align-items: center;
+    background-color: green;
+    border-radius: 200px;
+    display: flex;
+    height: 2.3em;
+    justify-content: center;
+    margin-bottom: -0.2em;
+    width: 2.3em;   
+}
+
+.checkmarkliner div span {
+	font-size: 2em;
 }
