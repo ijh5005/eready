@@ -70,8 +70,10 @@ body {
 
 .nameBar {
 	background-color: #FF00E1;
-	font-family: 'Anton', sans-serif;
+	/*font-family: 'Anton', sans-serif;*/
+	font-family: 'Sonsie One', cursive;
 	font-size: 4.8em;
+	text-align: center;
 	z-index: 5;
 }
 
