@@ -1,0 +1,51 @@
+.liner {
+	height: 60em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 40em;
+}
+
+.bubble {
+	background: radial-gradient(circle at 100px 100px, #DE64E0, transparent);
+	border-radius: 2000px;
+	height: 500px;
+	width: 500px;
+}
+
+img {
+    height: 395px;
+    width: 228px;
+}
+
+.pic,
+.picFront {
+	position: absolute;
+}
+
+.picFront {
+    height: 400px;
+    width: 228px;
+    opacity: 0.5;
+    background-color: #DE64E0;
+}
+
+.init {
+	transform: perspective( 600px ) rotateX(-27deg) rotateY(-24deg )
+}
+
+.rotate {
+	transform: perspective( 600px ) rotateX(-27deg) rotateY(0deg);
+}
+
+.turn {
+	transform: perspective( 600px ) rotateX(-27deg) rotateY(156deg );
+	transition: transform 10s linear 0s;
+}
+
+.turnit {
+	transform: perspective( 600px ) rotateX(-27deg) rotateY(-24deg );
+	
+}
